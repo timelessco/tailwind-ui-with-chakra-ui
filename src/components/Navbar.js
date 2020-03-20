@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Flex } from "@chakra-ui/core";
+import { Box, Flex, Stack, Link } from "@chakra-ui/core";
 
 export const Navbar = ({ children, ...props }) => {
   return (
@@ -17,11 +17,11 @@ export const NavbarContainer = ({ children, ...props }) => {
   );
 };
 
-export const NavbarGroup = ({ children, ...props }) => {
+export const NavbarList = ({ children, ...props }) => {
   return (
-    <Flex align='center' {...props}>
+    <Stack isInline align='center' {...props}>
       {children}
-    </Flex>
+    </Stack>
   );
 };
 
@@ -31,4 +31,8 @@ export const NavbarBrand = ({ children, ...props }) => {
       {children}
     </Flex>
   );
+};
+
+export const NavbarLink = ({ children, ...props }) => {
+  return <Link {...props}>{children}</Link>;
 };
