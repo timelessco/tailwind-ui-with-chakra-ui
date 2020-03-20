@@ -4,15 +4,17 @@ import "./index.css";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 
-import { ThemeProvider, CSSReset } from "@chakra-ui/core";
+import { ThemeProvider, ColorModeProvider, CSSReset } from "@chakra-ui/core";
 
 import theme from "./theme";
 console.log("%ctheme", "color: #00e600", theme);
 
 ReactDOM.render(
   <ThemeProvider theme={theme}>
-    <CSSReset />
-    <App />
+    <ColorModeProvider>
+      <CSSReset />
+      <App />
+    </ColorModeProvider>
   </ThemeProvider>,
   document.getElementById("root")
 );

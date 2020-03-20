@@ -1,9 +1,12 @@
 import React from "react";
-import { Box, Flex, Image, Link, Icon, PseudoBox, Stack } from "@chakra-ui/core";
+import { Box, Flex, Image, Link, Icon, PseudoBox, Stack, useDisclosure, useColorMode } from "@chakra-ui/core";
 
 import "./App.css";
 
 function App() {
+  const { isOpen, onOpen, onClose } = useDisclosure();
+  const { colorMode, toggleColorMode } = useColorMode();
+
   return (
     <div>
       <Box as='nav' bg='gray.800'>
@@ -138,10 +141,30 @@ function App() {
                     color: "white",
                     bg: "gray.700"
                   }}
+                  onClick={toggleColorMode}
+                >
+                  <Icon size='6' name={colorMode === "light" ? "moon" : "sun"} />
+                </PseudoBox>
+                <PseudoBox
+                  as='button'
+                  ml='3'
+                  p='1'
+                  borderWidth='2px'
+                  borderColor='transparent'
+                  color='gray.400'
+                  rounded='full'
+                  _hover={{
+                    color: "white"
+                  }}
+                  _focus={{
+                    outline: "none",
+                    color: "white",
+                    bg: "gray.700"
+                  }}
                 >
                   <Icon size='6' name='tw-bell' />
                 </PseudoBox>
-                <Box ml='3' pos='relative'>
+                <Flex ml='3' pos='relative'>
                   <PseudoBox
                     as='button'
                     maxW='xs'
@@ -150,6 +173,7 @@ function App() {
                     rounded='full'
                     color='white'
                     _focus={{ outline: "none", shadow: "0 0 0 2px currentColor" }}
+                    onClick={isOpen ? onClose : onOpen}
                   >
                     <Image
                       size='8'
@@ -158,47 +182,58 @@ function App() {
                       alt='Person literally smiling at you'
                     />
                   </PseudoBox>
-                  <Box pos='absolute' right='0' mt='2' w='48' rounded='md' shadow='lg' transformOrigin='top right'>
-                    <Box py='1' rounded='md' bg='white' shadow='xs'>
-                      <Link
-                        href='#test'
-                        d='block'
-                        px='4'
-                        py='2'
-                        fontSize='sm'
-                        color='gray.700'
-                        _hover={{ bg: "gray.100" }}
-                        _focus={{ outline: "auto 5px -webkit-focus-ring-color" }}
-                      >
-                        Your Profile
-                      </Link>
-                      <Link
-                        href='#test'
-                        d='block'
-                        px='4'
-                        py='2'
-                        fontSize='sm'
-                        color='gray.700'
-                        _hover={{ bg: "gray.100" }}
-                        _focus={{ outline: "auto 5px -webkit-focus-ring-color" }}
-                      >
-                        Settings
-                      </Link>
-                      <Link
-                        href='#test'
-                        d='block'
-                        px='4'
-                        py='2'
-                        fontSize='sm'
-                        color='gray.700'
-                        _hover={{ bg: "gray.100" }}
-                        _focus={{ outline: "auto 5px -webkit-focus-ring-color" }}
-                      >
-                        Sign out
-                      </Link>
-                    </Box>
+                  <Box
+                    pos='absolute'
+                    right='0'
+                    top='8'
+                    mt='2'
+                    w='48'
+                    rounded='md'
+                    shadow='lg'
+                    transformOrigin='top right'
+                  >
+                    {isOpen && (
+                      <Box py='1' rounded='md' bg='white' shadow='xs'>
+                        <Link
+                          href='#test'
+                          d='block'
+                          px='4'
+                          py='2'
+                          fontSize='sm'
+                          color='gray.700'
+                          _hover={{ bg: "gray.100" }}
+                          _focus={{ outline: "none", bg: "gray.100" }}
+                        >
+                          Your Profile
+                        </Link>
+                        <Link
+                          href='#test'
+                          d='block'
+                          px='4'
+                          py='2'
+                          fontSize='sm'
+                          color='gray.700'
+                          _hover={{ bg: "gray.100" }}
+                          _focus={{ outline: "none", bg: "gray.100" }}
+                        >
+                          Settings
+                        </Link>
+                        <Link
+                          href='#test'
+                          d='block'
+                          px='4'
+                          py='2'
+                          fontSize='sm'
+                          color='gray.700'
+                          _hover={{ bg: "gray.100" }}
+                          _focus={{ outline: "none", bg: "gray.100" }}
+                        >
+                          Sign out
+                        </Link>
+                      </Box>
+                    )}
                   </Box>
-                </Box>
+                </Flex>
               </Flex>
             </Box>
           </Flex>
