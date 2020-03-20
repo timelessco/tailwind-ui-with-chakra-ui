@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Flex, Image, Link, Icon, PseudoBox } from "@chakra-ui/core";
+import { Box, Flex, Image, Link, Icon, PseudoBox, Stack } from "@chakra-ui/core";
 
 import "./App.css";
 
@@ -14,7 +14,7 @@ function App() {
                 <Image h='8' w='8' src='https://tailwindui.com/img/logos/workflow-mark-on-dark.svg' />
               </Box>
               <Box d={{ base: "none", md: "block" }}>
-                <Flex ml='10' align='baseline'>
+                <Stack spacing='4' isInline ml='10' align='baseline'>
                   <Link
                     href='#test'
                     px='3'
@@ -36,7 +36,6 @@ function App() {
                   </Link>
                   <Link
                     href='#test'
-                    ml='4'
                     px='3'
                     py='2'
                     rounded='md'
@@ -58,7 +57,6 @@ function App() {
                   </Link>
                   <Link
                     href='#test'
-                    ml='4'
                     px='3'
                     py='2'
                     rounded='md'
@@ -80,7 +78,6 @@ function App() {
                   </Link>
                   <Link
                     href='#test'
-                    ml='4'
                     px='3'
                     py='2'
                     rounded='md'
@@ -102,7 +99,6 @@ function App() {
                   </Link>
                   <Link
                     href='#test'
-                    ml='4'
                     px='3'
                     py='2'
                     rounded='md'
@@ -122,7 +118,7 @@ function App() {
                   >
                     Reports
                   </Link>
-                </Flex>
+                </Stack>
               </Box>
             </Flex>
             <Box d={{ base: "none", md: "block" }}>
