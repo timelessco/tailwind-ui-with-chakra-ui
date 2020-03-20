@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Flex, Image, Link, Icon, Button, PseudoBox } from "@chakra-ui/core";
+import { Box, Flex, Image, Link, Icon, PseudoBox } from "@chakra-ui/core";
 
 import "./App.css";
 
