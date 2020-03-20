@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Flex, Image, Link, Icon, PseudoBox, useDisclosure, useColorMode } from "@chakra-ui/core";
+import { Box, Flex, Image, Link, Icon, Button, PseudoBox, useDisclosure, useColorMode } from "@chakra-ui/core";
 import { Navbar, NavbarList, NavbarContainer, NavbarBrand, NavbarLink } from "./components/Navbar";
 
 import "./App.css";
@@ -140,103 +140,131 @@ function App() {
             </NavbarLink>
           </NavbarList>
         </NavbarList>
-        <NavbarList spacing='3' color='gray.400'>
-          <PseudoBox
-            as='button'
-            p='1'
-            borderWidth='2px'
-            borderColor='transparent'
-            rounded='full'
-            _hover={{
-              color: "white"
-            }}
-            _focus={{
-              outline: "none",
-              color: "white",
-              bg: "gray.700"
-            }}
-            onClick={toggleColorMode}
-          >
-            <Icon size='6' name={colorMode === "light" ? "moon" : "sun"} />
-          </PseudoBox>
-          <PseudoBox
-            as='button'
-            p='1'
-            borderWidth='2px'
-            borderColor='transparent'
-            rounded='full'
-            _hover={{
-              color: "white"
-            }}
-            _focus={{
-              outline: "none",
-              color: "white",
-              bg: "gray.700"
-            }}
-          >
-            <Icon size='6' name='tw-bell' />
-          </PseudoBox>
-          <Flex pos='relative'>
+        <NavbarList spacing='4' color='gray.400'>
+          <Box flexShrink='0' rounded='md' shadow='sm'>
+            <Button
+              py='2'
+              rounded='md'
+              fontWeight='medium'
+              color='white'
+              bg='indigo.500'
+              lineHeight='shorter'
+              borderWidth='1px'
+              borderColor='transparent'
+              _hover={{
+                bg: "indigo.400"
+              }}
+              _focus={{
+                outline: "none",
+                shadow: "outlineIndigo",
+                borderColor: "indigo.600"
+              }}
+              _active={{
+                bg: "indigo.600"
+              }}
+            >
+              <Icon name='small-add' ml='-.25rem' mr='2' h='5' w='5' />
+              <span>New Job</span>
+            </Button>
+          </Box>
+          <NavbarList spacing='3' d={{ base: "none", md: "flex" }}>
             <PseudoBox
               as='button'
-              maxW='xs'
-              align='center'
-              fontSize='sm'
+              p='1'
+              borderWidth='2px'
+              borderColor='transparent'
               rounded='full'
-              color='white'
-              _focus={{ outline: "none", shadow: "0 0 0 2px currentColor" }}
-              onClick={isOpen ? onClose : onOpen}
+              _hover={{
+                color: "white"
+              }}
+              _focus={{
+                outline: "none",
+                color: "white",
+                bg: "gray.700"
+              }}
+              onClick={toggleColorMode}
             >
-              <Image
-                size='8'
-                rounded='full'
-                src='https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80'
-                alt='Person literally smiling at you'
-              />
+              <Icon size='6' name={colorMode === "light" ? "moon" : "sun"} />
             </PseudoBox>
-            <Box pos='absolute' right='0' top='8' mt='2' w='48' rounded='md' shadow='lg' transformOrigin='top right'>
-              {isOpen && (
-                <Box py='1' rounded='md' bg='white' shadow='xs'>
-                  <Link
-                    href='#test'
-                    d='block'
-                    px='4'
-                    py='2'
-                    fontSize='sm'
-                    color='gray.700'
-                    _hover={{ bg: "gray.100" }}
-                    _focus={{ outline: "none", bg: "gray.100" }}
-                  >
-                    Your Profile
-                  </Link>
-                  <Link
-                    href='#test'
-                    d='block'
-                    px='4'
-                    py='2'
-                    fontSize='sm'
-                    color='gray.700'
-                    _hover={{ bg: "gray.100" }}
-                    _focus={{ outline: "none", bg: "gray.100" }}
-                  >
-                    Settings
-                  </Link>
-                  <Link
-                    href='#test'
-                    d='block'
-                    px='4'
-                    py='2'
-                    fontSize='sm'
-                    color='gray.700'
-                    _hover={{ bg: "gray.100" }}
-                    _focus={{ outline: "none", bg: "gray.100" }}
-                  >
-                    Sign out
-                  </Link>
-                </Box>
-              )}
-            </Box>
-          </Flex>
+            <PseudoBox
+              as='button'
+              p='1'
+              borderWidth='2px'
+              borderColor='transparent'
+              rounded='full'
+              _hover={{
+                color: "white"
+              }}
+              _focus={{
+                outline: "none",
+                color: "white",
+                bg: "gray.700"
+              }}
+            >
+              <Icon size='6' name='tw-bell' />
+            </PseudoBox>
+            <Flex pos='relative'>
+              <PseudoBox
+                as='button'
+                maxW='xs'
+                align='center'
+                fontSize='sm'
+                rounded='full'
+                color='white'
+                _focus={{ outline: "none", shadow: "0 0 0 2px currentColor" }}
+                onClick={isOpen ? onClose : onOpen}
+              >
+                <Image
+                  size='8'
+                  rounded='full'
+                  src='https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80'
+                  alt='Person literally smiling at you'
+                />
+              </PseudoBox>
+              <Box pos='absolute' right='0' top='8' mt='2' w='48' rounded='md' shadow='lg' transformOrigin='top right'>
+                {isOpen && (
+                  <Box py='1' rounded='md' bg='white' shadow='xs'>
+                    <Link
+                      href='#test'
+                      d='block'
+                      px='4'
+                      py='2'
+                      fontSize='sm'
+                      color='gray.700'
+                      _hover={{ bg: "gray.100" }}
+                      _focus={{ outline: "none", bg: "gray.100" }}
+                    >
+                      Your Profile
+                    </Link>
+                    <Link
+                      href='#test'
+                      d='block'
+                      px='4'
+                      py='2'
+                      fontSize='sm'
+                      color='gray.700'
+                      _hover={{ bg: "gray.100" }}
+                      _focus={{ outline: "none", bg: "gray.100" }}
+                    >
+                      Settings
+                    </Link>
+                    <Link
+                      href='#test'
+                      d='block'
+                      px='4'
+                      py='2'
+                      fontSize='sm'
+                      color='gray.700'
+                      _hover={{ bg: "gray.100" }}
+                      _focus={{ outline: "none", bg: "gray.100" }}
+                    >
+                      Sign out
+                    </Link>
+                  </Box>
+                )}
+              </Box>
+            </Flex>
+          </NavbarList>
         </NavbarList>
       </NavbarContainer>
     </Navbar>

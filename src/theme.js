@@ -151,7 +151,8 @@ export default {
     ...theme.shadows,
     xs: "0 0 0 1px rgba(0, 0, 0, 0.05)",
     sm: "0 1px 2px 0 rgba(0, 0, 0, 0.05)",
-    base: "0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)"
+    base: "0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)",
+    outlineIndigo: "0 0 0 3px rgba(180,198,252,.45)"
   },
   icons: {
     ...theme.icons,
