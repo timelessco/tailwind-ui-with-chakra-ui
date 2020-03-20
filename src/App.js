@@ -141,24 +141,64 @@ function App() {
                 >
                   <Icon size='6' name='tw-bell' />
                 </PseudoBox>
-                <PseudoBox
-                  as='button'
-                  ml='3'
-                  pos='relative'
-                  maxW='xs'
-                  align='center'
-                  fontSize='sm'
-                  rounded='full'
-                  color='white'
-                  _focus={{ outline: "none", shadow: "0 0 0 2px currentColor" }}
-                >
-                  <Image
-                    size='8'
+                <Box ml='3' pos='relative'>
+                  <PseudoBox
+                    as='button'
+                    maxW='xs'
+                    align='center'
+                    fontSize='sm'
                     rounded='full'
-                    src='https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80'
-                    alt='Person literally smiling at you'
-                  />
-                </PseudoBox>
+                    color='white'
+                    _focus={{ outline: "none", shadow: "0 0 0 2px currentColor" }}
+                  >
+                    <Image
+                      size='8'
+                      rounded='full'
+                      src='https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80'
+                      alt='Person literally smiling at you'
+                    />
+                  </PseudoBox>
+                  <Box pos='absolute' right='0' mt='2' w='48' rounded='md' shadow='lg' transformOrigin='top right'>
+                    <Box py='1' rounded='md' bg='white' shadow='xs'>
+                      <Link
+                        href='#test'
+                        d='block'
+                        px='4'
+                        py='2'
+                        fontSize='sm'
+                        color='gray.700'
+                        _hover={{ bg: "gray.100" }}
+                        _focus={{ outline: "auto 5px -webkit-focus-ring-color" }}
+                      >
+                        Your Profile
+                      </Link>
+                      <Link
+                        href='#test'
+                        d='block'
+                        px='4'
+                        py='2'
+                        fontSize='sm'
+                        color='gray.700'
+                        _hover={{ bg: "gray.100" }}
+                        _focus={{ outline: "auto 5px -webkit-focus-ring-color" }}
+                      >
+                        Settings
+                      </Link>
+                      <Link
+                        href='#test'
+                        d='block'
+                        px='4'
+                        py='2'
+                        fontSize='sm'
+                        color='gray.700'
+                        _hover={{ bg: "gray.100" }}
+                        _focus={{ outline: "auto 5px -webkit-focus-ring-color" }}
+                      >
+                        Sign out
+                      </Link>
+                    </Box>
+                  </Box>
+                </Box>
               </Flex>
             </Box>
           </Flex>
