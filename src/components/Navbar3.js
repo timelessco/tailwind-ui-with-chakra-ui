@@ -18,7 +18,7 @@ const Navbar = () => {
             <NavBrand h='8' src='https://tailwindui.com/img/logos/workflow-logo-on-white.svg' />
           )}
         </NavList>
-        <NavList isInline>
+        <NavList isInline spacing='0'>
           <NavList d={{ base: "none", md: "flex" }} isInline spacing='4' ml='6'>
             <Link
               href='#test'
@@ -104,9 +104,9 @@ const Navbar = () => {
             >
               Calendar
             </Link>
-            <IconButton icon='moon' onClick={toggleColorMode} ml='4'></IconButton>
+            <IconButton icon='moon' onClick={toggleColorMode}></IconButton>
           </NavList>
-          <NavList d={{ base: "flex", md: "none" }} mr='2' ml='-8px'>
+          <NavList d={{ base: "flex", md: "none" }}>
             <NavMenuButton
               icon={isMenuOpen ? MdClose : MdMenu}
               onClick={isMenuOpen ? onMenuClose : onMenuOpen}

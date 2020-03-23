@@ -1,5 +1,5 @@
 import React from "react";
-import { useColorMode, IconButton, Link, useDisclosure, Box } from "@chakra-ui/core";
+import { useColorMode, IconButton, Link, useDisclosure, Box, Flex } from "@chakra-ui/core";
 import { MdMenu, MdClose } from "react-icons/md";
 
 import { Nav, NavContainer, NavList, NavBrand, NavMenuButton } from "../molecules/Navbar";
@@ -128,11 +128,9 @@ const Navbar = () => {
             </Link>
           </NavList>
         </NavList>
-        <NavList isInline spacing='4'>
-          <NavList>
-            <IconButton icon='moon' onClick={toggleColorMode}></IconButton>
-          </NavList>
-          <NavList d={{ base: "flex", md: "none" }}>
+        <NavList isInline spacing='0'>
+          <IconButton icon='moon' onClick={toggleColorMode}></IconButton>
+          <NavList d={{ base: "flex", md: "none" }} ml='2'>
             <NavMenuButton
               icon={isMenuOpen ? MdClose : MdMenu}
               onClick={isMenuOpen ? onMenuClose : onMenuOpen}
