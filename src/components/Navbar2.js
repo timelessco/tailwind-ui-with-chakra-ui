@@ -1,5 +1,5 @@
 import React from "react";
-import { useColorMode, IconButton, Link, useDisclosure, Box, Flex } from "@chakra-ui/core";
+import { useColorMode, IconButton, Link, useDisclosure, Box } from "@chakra-ui/core";
 import { MdMenu, MdClose } from "react-icons/md";
 
 import { Nav, NavContainer, NavList, NavBrand, NavMenuButton } from "../molecules/Navbar";

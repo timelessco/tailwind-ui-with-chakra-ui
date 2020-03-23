@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Flex, Stack, Image, useDisclosure, IconButton } from "@chakra-ui/core";
+import { Box, Flex, Stack, Image, IconButton } from "@chakra-ui/core";
 
 export const Nav = ({ children, ...props }) => {
   return (
