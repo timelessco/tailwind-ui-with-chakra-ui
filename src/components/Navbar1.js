@@ -138,15 +138,18 @@ const Navbar = () => {
       <Box d={{ base: `${isMenuOpen ? "block" : "none"}`, md: "none" }}>
         <NavList align='start' spacing='1' px={{ base: 2, sm: 3 }} pt='2' pb='3'>
           <Link
-            href='#test'
+            href='#'
             d='block'
             px='3'
             py='2'
             rounded='md'
             fontSize='md'
             fontWeight='medium'
-            color='white'
-            bg='gray.900'
+            _hover={{
+              color: "white",
+              bg: "gray.700",
+              textDecoration: "none"
+            }}
             _focus={{ outline: "none", bg: "gray.700", color: "white" }}
           >
             Dashboard
